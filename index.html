@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Tamworth Informed is a digital community hub for Tamworth, Staffordshire. Coming soon.">
+  <meta name="theme-color" content="#060912">
+  <title>Tamworth Informed — Coming soon</title>
+  <style>
+    :root {
+      --bg: #060912;
+      --ink: #f3f6fb;
+      --muted: #c9d4e4;
+      --quiet: #d5deeb;
+      --accent: #027ff7;
+      --line: rgba(2, 127, 247, 0.55);
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      height: 100%;
+    }
+
+    body {
+      min-height: 100vh;
+      min-height: 100dvh;
+      height: 100dvh;
+      overflow: hidden;
+      color: var(--ink);
+      background-color: var(--bg);
+      background-image: radial-gradient(ellipse 52% 46% at 50% 26%, rgba(2, 127, 247, 0.2), transparent 68%);
+      font-family: Inter, "Segoe UI", "Avenir Next", "Helvetica Neue", system-ui, sans-serif;
+      display: grid;
+      place-items: center;
+      padding: clamp(12px, 2.4vh, 32px) clamp(16px, 4vw, 40px);
+    }
+
+    main {
+      width: min(760px, 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: clamp(8px, 1.7vh, 18px);
+    }
+
+    .logo-wrap {
+      display: flex;
+      justify-content: center;
+      padding: clamp(4px, 1vh, 12px) clamp(8px, 2vw, 20px) clamp(2px, 0.6vh, 8px);
+    }
+
+    .logo {
+      display: block;
+      width: min(420px, 86vw, 42vh);
+      height: auto;
+      opacity: 0;
+    }
+
+    .soon {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin: 0;
+      color: var(--quiet);
+      font-size: clamp(0.68rem, 1.1vw, 0.78rem);
+      font-weight: 600;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+    }
+
+    .soon::before,
+    .soon::after {
+      content: "";
+      width: clamp(1.4rem, 4vw, 2.4rem);
+      height: 1px;
+      background: var(--line);
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 18ch;
+      font-family: Georgia, "Liberation Serif", "Iowan Old Style", "Palatino Linotype", Palatino, serif;
+      font-size: clamp(1.35rem, 1.1rem + 1.6vw, 2.35rem);
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1.18;
+      text-wrap: balance;
+    }
+
+    .lede {
+      margin: 0;
+      max-width: 38ch;
+      color: var(--muted);
+      font-size: clamp(0.92rem, 0.86rem + 0.4vw, 1.125rem);
+      line-height: 1.45;
+    }
+
+    .features {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.35rem 1.15rem;
+      width: min(100%, 36rem);
+      margin: clamp(2px, 0.6vh, 8px) 0 0;
+      padding: clamp(8px, 1.2vh, 14px) 0 0;
+      border-top: 1px solid rgba(2, 127, 247, 0.35);
+    }
+
+    .features li {
+      color: var(--quiet);
+      font-size: clamp(0.78rem, 0.74rem + 0.25vw, 0.92rem);
+      letter-spacing: 0.04em;
+    }
+
+    @media (max-height: 740px) {
+      .logo { width: min(320px, 74vw, 34vh); }
+      h1 { font-size: clamp(1.2rem, 4.6vw, 1.7rem); }
+      main { gap: 7px; }
+    }
+
+    @media (max-width: 420px) {
+      h1 { max-width: 20ch; }
+      .features { gap: 0.3rem 0.85rem; }
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .logo { transition: opacity 160ms linear; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .logo { transition: none; }
+    }
+  </style>
+  <noscript>
+    <style>.logo { opacity: 1 !important; }</style>
+  </noscript>
+</head>
+<body>
+  <main>
+    <div class="logo-wrap">
+      <img class="logo" src="logo.jpg" alt="Tamworth Informed" width="300" height="100">
+    </div>
+    <p class="soon">Coming soon</p>
+    <h1>Tamworth’s digital community hub is on the way</h1>
+    <p class="lede">Connecting residents, local businesses, tradespeople and employers.</p>
+    <ul class="features" aria-label="What’s coming">
+      <li>Directory</li>
+      <li>Marketplace</li>
+      <li>Jobs</li>
+      <li>Events</li>
+      <li>Deals</li>
+    </ul>
+  </main>
+  <script>
+    (function () {
+      var img = document.querySelector(".logo");
+      if (!img) return;
+
+      function reveal() {
+        img.classList.add("is-ready");
+        img.style.opacity = "1";
+      }
+
+      function isMatte(r, g, b) {
+        return r >= 236 && g >= 236 && b >= 236 && (Math.max(r, g, b) - Math.min(r, g, b)) < 18;
+      }
+
+      function isFringe(r, g, b) {
+        return Math.min(r, g, b) > 175 && (Math.max(r, g, b) - Math.min(r, g, b)) < 36;
+      }
+
+      function knockOutWhite() {
+        var w = img.naturalWidth;
+        var h = img.naturalHeight;
+        if (!w || !h) {
+          reveal();
+          return;
+        }
+        var canvas = document.createElement("canvas");
+        canvas.width = w;
+        canvas.height = h;
+        var ctx = canvas.getContext("2d", { willReadFrequently: true });
+        ctx.drawImage(img, 0, 0);
+        var image = ctx.getImageData(0, 0, w, h);
+        var d = image.data;
+        var removed = new Uint8Array(w * h);
+        var stack = [];
+        var x, y, p, i, r, g, b;
+        for (x = 0; x < w; x++) {
+          stack.push(x, x + (h - 1) * w);
+        }
+        for (y = 0; y < h; y++) {
+          stack.push(y * w, y * w + (w - 1));
+        }
+        while (stack.length) {
+          p = stack.pop();
+          if (removed[p]) continue;
+          i = p * 4;
+          r = d[i];
+          g = d[i + 1];
+          b = d[i + 2];
+          if (!isMatte(r, g, b)) continue;
+          removed[p] = 1;
+          x = p % w;
+          y = (p - x) / w;
+          if (x > 0) stack.push(p - 1);
+          if (x < w - 1) stack.push(p + 1);
+          if (y > 0) stack.push(p - w);
+          if (y < h - 1) stack.push(p + w);
+        }
+        var pass, n, extra;
+        for (pass = 0; pass < 3; pass++) {
+          extra = [];
+          for (p = 0; p < w * h; p++) {
+            if (removed[p]) continue;
+            i = p * 4;
+            r = d[i];
+            g = d[i + 1];
+            b = d[i + 2];
+            if (!isFringe(r, g, b)) continue;
+            x = p % w;
+            y = (p - x) / w;
+            if (x === 0 || removed[p - 1] || x === w - 1 || removed[p + 1] || y === 0 || removed[p - w] || y === h - 1 || removed[p + w]) {
+              extra.push(p);
+            }
+          }
+          for (n = 0; n < extra.length; n++) removed[extra[n]] = 1;
+        }
+        for (p = 0; p < w * h; p++) {
+          if (removed[p]) d[p * 4 + 3] = 0;
+        }
+        ctx.putImageData(image, 0, 0);
+        img.src = canvas.toDataURL("image/png");
+        if (img.complete) reveal();
+      }
+
+      var stage = 0;
+      function onLoad() {
+        if (stage === 0) {
+          stage = 1;
+          try { knockOutWhite(); } catch (e) { reveal(); }
+        } else {
+          reveal();
+        }
+      }
+      img.addEventListener("error", reveal);
+      img.addEventListener("load", onLoad);
+      if (img.complete) onLoad();
+    })();
+  </script>
+</body>
+</html>
