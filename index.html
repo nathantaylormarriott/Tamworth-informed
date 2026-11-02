@@ -8,7 +8,7 @@
   <title>Tamworth Informed — Coming soon</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --paper: #f3eee6;
@@ -31,7 +31,7 @@
       min-height: 100dvh;
       background: var(--paper);
       color: var(--ink);
-      font-family: Nunito, "Avenir Next", "Segoe UI", sans-serif;
+      font-family: Quicksand, "Avenir Next", "Segoe UI", sans-serif;
       font-size: 1.0625rem;
       line-height: 1.5;
       padding: 2.75rem 1.35rem 3.5rem;
@@ -46,6 +46,15 @@
     .intro {
       text-align: center;
     }
+
+    .intro {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .intro h1 { order: 1; }
+    .intro .group { order: 2; width: 100%; }
+    .intro .lede { order: 3; }
 
     .logo {
       display: block;
@@ -239,24 +248,27 @@
       .masthead {
         grid-column: 1 / -1;
         display: flex;
-        align-items: flex-end;
-        justify-content: space-between;
-        text-align: left;
+        justify-content: center;
+        text-align: center;
         margin-bottom: 2.5rem;
         padding-bottom: 1.35rem;
         border-bottom: 1px solid var(--line);
       }
 
       .logo {
-        width: 34rem;
+        width: 28rem;
         max-width: none;
-        margin: 0;
+        margin: 0 auto;
       }
 
       .intro {
         text-align: left;
         padding-top: 0.35rem;
       }
+
+      .intro h1 { order: 1; }
+      .intro .lede { order: 2; }
+      .intro .group { order: 3; }
 
       h1 {
         margin: 0;
@@ -352,6 +364,7 @@
     </header>
     <div class="intro">
       <h1>Tamworth’s digital community hub, coming soon!</h1>
+      <p class="lede">Connecting residents, local businesses, tradespeople and employers.</p>
       <section class="group" aria-label="Facebook group">
         <ul class="highlights">
           <li>
@@ -368,7 +381,6 @@
           </li>
         </ul>
         <a class="group-link" href="https://www.facebook.com/groups/560283727406222" target="_blank" rel="noopener noreferrer">Join the Facebook group</a>
-        <p class="lede">Connecting residents, local businesses, tradespeople and employers.</p>
       </section>
     </div>
 
