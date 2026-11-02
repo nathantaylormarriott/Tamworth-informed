@@ -3,177 +3,120 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Tamworth Informed is a digital community hub for Tamworth, Staffordshire. Coming soon.">
-  <meta name="theme-color" content="#060912">
+  <meta name="description" content="Tamworth Informed is a community hub for Tamworth, Staffordshire. Coming soon.">
+  <meta name="theme-color" content="#f3eee6">
   <title>Tamworth Informed — Coming soon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #060912;
-      --ink: #f3f6fb;
-      --muted: #c9d4e4;
-      --quiet: #d5deeb;
-      --accent: #027ff7;
-      --line: rgba(2, 127, 247, 0.55);
-      --field-bg: rgba(2, 127, 247, 0.08);
-      --field-border: rgba(2, 127, 247, 0.35);
+      --paper: #f3eee6;
+      --ink: #241e18;
+      --body: #4e463d;
+      --quiet: #6a6156;
+      --line: #e0d8cc;
+      --field: #fffcf8;
+      --field-border: #d5cdc0;
+      --accent: #0c4d78;
+      --radius: 12px;
     }
 
     * { box-sizing: border-box; }
 
-    html, body {
-      margin: 0;
-      min-height: 100%;
-    }
+    html, body { margin: 0; }
 
     body {
       min-height: 100vh;
       min-height: 100dvh;
-      overflow-x: hidden;
-      overflow-y: auto;
+      background: var(--paper);
       color: var(--ink);
-      background-color: var(--bg);
-      background-image: radial-gradient(ellipse 52% 46% at 50% 22%, rgba(2, 127, 247, 0.2), transparent 68%);
-      font-family: Inter, "Segoe UI", "Avenir Next", "Helvetica Neue", system-ui, sans-serif;
-      display: grid;
-      place-items: center;
-      padding: clamp(12px, 2vh, 24px) clamp(16px, 4vw, 40px);
+      font-family: Nunito, "Avenir Next", "Segoe UI", sans-serif;
+      font-size: 1.0625rem;
+      line-height: 1.5;
+      padding: 2.75rem 1.35rem 3.5rem;
     }
 
     main {
-      width: min(760px, 100%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      gap: clamp(6px, 1.4vh, 14px);
+      width: min(34rem, 100%);
+      margin: 0 auto;
     }
 
-    .logo-wrap {
-      display: flex;
-      justify-content: center;
-      padding: clamp(2px, 0.6vh, 8px) clamp(8px, 2vw, 20px) 0;
+    .masthead,
+    .intro {
+      text-align: center;
     }
 
     .logo {
       display: block;
-      width: min(360px, 82vw, 34vh);
+      width: 100%;
+      max-width: 22rem;
       height: auto;
-      opacity: 0;
-    }
-
-    .soon {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin: 0;
-      color: var(--quiet);
-      font-size: clamp(0.68rem, 1.1vw, 0.78rem);
-      font-weight: 600;
-      letter-spacing: 0.26em;
-      text-transform: uppercase;
-    }
-
-    .soon::before,
-    .soon::after {
-      content: "";
-      width: clamp(1.4rem, 4vw, 2.4rem);
-      height: 1px;
-      background: var(--line);
+      margin: 0 auto 1.85rem;
     }
 
     h1 {
-      margin: 0;
-      max-width: 18ch;
-      font-family: Georgia, "Liberation Serif", "Iowan Old Style", "Palatino Linotype", Palatino, serif;
-      font-size: clamp(1.25rem, 1rem + 1.4vw, 2.1rem);
-      font-weight: 500;
-      letter-spacing: -0.02em;
-      line-height: 1.18;
+      margin: 0.85rem auto 0;
+      max-width: 16em;
+      font-size: clamp(1.9rem, 1.15rem + 2.5vw, 2.7rem);
+      font-weight: 600;
+      line-height: 1.15;
+      letter-spacing: -0.015em;
       text-wrap: balance;
     }
 
     .lede {
-      margin: 0;
-      max-width: 38ch;
-      color: var(--muted);
-      font-size: clamp(0.88rem, 0.84rem + 0.35vw, 1.05rem);
-      line-height: 1.45;
-    }
-
-    .features {
-      list-style: none;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.35rem 1.15rem;
-      width: min(100%, 36rem);
-      margin: 0;
-      padding: clamp(6px, 1vh, 10px) 0 0;
-      border-top: 1px solid rgba(2, 127, 247, 0.35);
-    }
-
-    .features li {
-      color: var(--quiet);
-      font-size: clamp(0.76rem, 0.72rem + 0.25vw, 0.88rem);
-      letter-spacing: 0.04em;
+      margin: 1rem auto 0;
+      max-width: 28em;
+      color: var(--body);
+      font-size: 1.125rem;
+      line-height: 1.5;
+      text-wrap: balance;
     }
 
     .contact {
-      width: min(100%, 28rem);
-      margin: clamp(4px, 0.8vh, 10px) 0 0;
-      padding: clamp(10px, 1.4vh, 16px) 0 0;
-      border-top: 1px solid rgba(2, 127, 247, 0.35);
-      text-align: left;
+      margin-top: 2.75rem;
+      padding-top: 1.85rem;
+      border-top: 1px solid var(--line);
     }
 
-    .contact-heading {
-      margin: 0 0 0.35rem;
-      font-size: clamp(0.72rem, 0.68rem + 0.2vw, 0.82rem);
+    .contact h2 {
+      margin: 0;
+      font-size: 1.75rem;
       font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--quiet);
-      text-align: center;
+      line-height: 1.2;
     }
 
     .contact-note {
-      margin: 0 0 clamp(8px, 1.2vh, 12px);
-      color: var(--muted);
-      font-size: clamp(0.78rem, 0.74rem + 0.2vw, 0.86rem);
-      line-height: 1.4;
-      text-align: center;
+      margin: 0.4rem 0 1.35rem;
+      color: var(--body);
     }
 
     .contact-form {
       display: grid;
-      gap: clamp(6px, 1vh, 10px);
+      gap: 1rem;
     }
 
     .field label {
       display: block;
-      margin-bottom: 0.25rem;
-      font-size: 0.78rem;
-      font-weight: 500;
-      color: var(--quiet);
-      letter-spacing: 0.02em;
+      margin-bottom: 0.3rem;
     }
 
     .field input,
     .field textarea {
       width: 100%;
-      padding: 0.55rem 0.65rem;
+      padding: 0.75rem 0.8rem;
       border: 1px solid var(--field-border);
-      border-radius: 6px;
-      background: var(--field-bg);
+      border-radius: var(--radius);
+      background: var(--field);
       color: var(--ink);
       font: inherit;
-      font-size: 0.9rem;
-      transition: border-color 140ms ease, box-shadow 140ms ease;
+      font-size: 1rem;
     }
 
     .field input::placeholder,
     .field textarea::placeholder {
-      color: rgba(201, 212, 228, 0.55);
+      color: #8a8176;
     }
 
     .field input:focus-visible,
@@ -185,8 +128,7 @@
     }
 
     .field textarea {
-      min-height: 4.5rem;
-      max-height: 8rem;
+      min-height: 8rem;
       resize: vertical;
     }
 
@@ -199,68 +141,240 @@
     }
 
     .contact-form button {
-      justify-self: center;
-      margin-top: 0.15rem;
-      padding: 0.55rem 1.35rem;
-      border: 1px solid rgba(2, 127, 247, 0.65);
-      border-radius: 999px;
-      background: linear-gradient(180deg, rgba(2, 127, 247, 0.95), rgba(2, 127, 247, 0.78));
+      margin-top: 0.25rem;
+      width: 100%;
+      padding: 0.85rem 1.1rem;
+      border: 0;
+      border-radius: var(--radius);
+      background: var(--accent);
       color: #fff;
       font: inherit;
-      font-size: 0.82rem;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
+      font-size: 1.05rem;
       cursor: pointer;
     }
 
     .contact-form button:hover {
-      filter: brightness(1.06);
+      background: #0a4266;
     }
 
-    @media (max-height: 740px) {
-      .logo { width: min(280px, 72vw, 28vh); }
-      h1 { font-size: clamp(1.15rem, 4.2vw, 1.55rem); }
-      main { gap: 6px; }
-      .field textarea { min-height: 3.5rem; }
+    .group {
+      margin-top: 1.75rem;
+      text-align: center;
     }
 
-    @media (max-width: 420px) {
-      h1 { max-width: 20ch; }
-      .features { gap: 0.3rem 0.85rem; }
+    .highlights {
+      display: grid;
+      gap: 0.65rem;
+      list-style: none;
+      margin: 0 0 1rem;
+      padding: 0;
     }
 
-    @media (prefers-reduced-motion: no-preference) {
-      .logo { transition: opacity 160ms linear; }
+    .highlights li {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.75rem;
+      padding: 0.85rem 1rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--field);
+      text-align: left;
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      .logo { transition: none; }
+    .stat {
+      color: var(--ink);
+      font-size: 1.3rem;
+      font-weight: 700;
+      line-height: 1.15;
+    }
+
+    .stat-label {
+      color: var(--quiet);
+      font-size: 0.95rem;
+      font-weight: 600;
+      line-height: 1.25;
+      text-align: right;
+    }
+
+    .group-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 0.85rem 1.2rem;
+      border-radius: var(--radius);
+      background: #1877f2;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.05rem;
+      text-decoration: none;
+    }
+
+    .group-link:hover {
+      background: #0f67d8;
+    }
+
+    .group-link:focus-visible {
+      outline: 2px solid #1877f2;
+      outline-offset: 2px;
+    }
+
+    @media (min-width: 960px) {
+      body {
+        display: flex;
+        align-items: safe center;
+        justify-content: center;
+        padding: 3rem 4.5rem;
+      }
+
+      main {
+        width: min(68rem, 100%);
+        display: grid;
+        grid-template-columns: minmax(0, 1.15fr) minmax(20rem, 0.85fr);
+        column-gap: 4.5rem;
+        align-items: start;
+      }
+
+      .masthead {
+        grid-column: 1 / -1;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        text-align: left;
+        margin-bottom: 2.5rem;
+        padding-bottom: 1.35rem;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .logo {
+        width: 34rem;
+        max-width: none;
+        margin: 0;
+      }
+
+      .intro {
+        text-align: left;
+        padding-top: 0.35rem;
+      }
+
+      h1 {
+        margin: 0;
+        max-width: 14em;
+        font-size: 3.15rem;
+        line-height: 1.12;
+        text-align: left;
+      }
+
+      .lede {
+        margin: 1.15rem 0 0;
+        max-width: 36em;
+        font-size: 1.2rem;
+        text-align: left;
+      }
+
+      .group {
+        margin-top: 2rem;
+        text-align: left;
+      }
+
+      .highlights {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.7rem;
+      }
+
+      .highlights li {
+        display: block;
+        min-height: 6.25rem;
+        padding: 0.9rem 0.8rem;
+      }
+
+      .stat {
+        display: block;
+        font-size: 1.2rem;
+      }
+
+      .stat-label {
+        display: block;
+        margin-top: 0.35rem;
+        text-align: left;
+      }
+
+      .group-link {
+        width: auto;
+        padding-inline: 1.4rem;
+      }
+
+      .contact {
+        margin: 0;
+        padding: 0.35rem 0 0 3.25rem;
+        border-top: 0;
+        border-left: 1px solid var(--line);
+      }
+
+      .contact h2 {
+        font-size: 2rem;
+      }
+
+      .contact-form {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.9rem 1rem;
+      }
+
+      .field-message,
+      .contact-form button {
+        grid-column: 1 / -1;
+      }
+
+      .field textarea {
+        min-height: 7.5rem;
+      }
+
+      .contact-form button {
+        width: auto;
+        justify-self: start;
+        margin-top: 0.35rem;
+        padding-inline: 1.6rem;
+      }
     }
   </style>
-  <noscript>
-    <style>.logo { opacity: 1 !important; }</style>
-  </noscript>
 </head>
 <body>
   <main>
-    <div class="logo-wrap">
-      <img class="logo" src="logo.jpg" alt="Tamworth Informed" width="300" height="100">
+    <header class="masthead">
+      <img
+        class="logo"
+        src="tamworth-informed-logo.png"
+        alt="Tamworth Informed"
+        width="300"
+        height="100"
+      >
+    </header>
+    <div class="intro">
+      <h1>Tamworth’s digital community hub, coming soon!</h1>
+      <section class="group" aria-label="Facebook group">
+        <ul class="highlights">
+          <li>
+            <span class="stat">Over 47,000</span>
+            <span class="stat-label">members</span>
+          </li>
+          <li>
+            <span class="stat">Over 2 million</span>
+            <span class="stat-label">in reach</span>
+          </li>
+          <li>
+            <span class="stat">Available</span>
+            <span class="stat-label">Business opportunities</span>
+          </li>
+        </ul>
+        <a class="group-link" href="https://www.facebook.com/groups/560283727406222" target="_blank" rel="noopener noreferrer">Join the Facebook group</a>
+        <p class="lede">Connecting residents, local businesses, tradespeople and employers.</p>
+      </section>
     </div>
-    <p class="soon">Coming soon</p>
-    <h1>Tamworth’s digital community hub is on the way</h1>
-    <p class="lede">Connecting residents, local businesses, tradespeople and employers.</p>
-    <ul class="features" aria-label="What’s coming">
-      <li>Directory</li>
-      <li>Marketplace</li>
-      <li>Jobs</li>
-      <li>Events</li>
-      <li>Deals</li>
-    </ul>
 
     <section class="contact" aria-labelledby="contact-heading">
-      <h2 class="contact-heading" id="contact-heading">Get in touch</h2>
-      <p class="contact-note">Questions or want to be involved? Send us a message.</p>
+      <h2 id="contact-heading">Get in touch</h2>
+      <p class="contact-note">Questions, or want to be involved? Send a message.</p>
       <form
         class="contact-form"
         name="contact"
@@ -281,7 +395,7 @@
           <label for="contact-email">Email</label>
           <input id="contact-email" type="email" name="email" autocomplete="email" required maxlength="254" placeholder="you@example.com">
         </div>
-        <div class="field">
+        <div class="field field-message">
           <label for="contact-message">Message</label>
           <textarea id="contact-message" name="message" required maxlength="2000" placeholder="How can we help?"></textarea>
         </div>
@@ -289,102 +403,5 @@
       </form>
     </section>
   </main>
-  <script>
-    (function () {
-      var img = document.querySelector(".logo");
-      if (!img) return;
-
-      function reveal() {
-        img.classList.add("is-ready");
-        img.style.opacity = "1";
-      }
-
-      function isMatte(r, g, b) {
-        return r >= 236 && g >= 236 && b >= 236 && (Math.max(r, g, b) - Math.min(r, g, b)) < 18;
-      }
-
-      function isFringe(r, g, b) {
-        return Math.min(r, g, b) > 175 && (Math.max(r, g, b) - Math.min(r, g, b)) < 36;
-      }
-
-      function knockOutWhite() {
-        var w = img.naturalWidth;
-        var h = img.naturalHeight;
-        if (!w || !h) {
-          reveal();
-          return;
-        }
-        var canvas = document.createElement("canvas");
-        canvas.width = w;
-        canvas.height = h;
-        var ctx = canvas.getContext("2d", { willReadFrequently: true });
-        ctx.drawImage(img, 0, 0);
-        var image = ctx.getImageData(0, 0, w, h);
-        var d = image.data;
-        var removed = new Uint8Array(w * h);
-        var stack = [];
-        var x, y, p, i, r, g, b;
-        for (x = 0; x < w; x++) {
-          stack.push(x, x + (h - 1) * w);
-        }
-        for (y = 0; y < h; y++) {
-          stack.push(y * w, y * w + (w - 1));
-        }
-        while (stack.length) {
-          p = stack.pop();
-          if (removed[p]) continue;
-          i = p * 4;
-          r = d[i];
-          g = d[i + 1];
-          b = d[i + 2];
-          if (!isMatte(r, g, b)) continue;
-          removed[p] = 1;
-          x = p % w;
-          y = (p - x) / w;
-          if (x > 0) stack.push(p - 1);
-          if (x < w - 1) stack.push(p + 1);
-          if (y > 0) stack.push(p - w);
-          if (y < h - 1) stack.push(p + w);
-        }
-        var pass, n, extra;
-        for (pass = 0; pass < 3; pass++) {
-          extra = [];
-          for (p = 0; p < w * h; p++) {
-            if (removed[p]) continue;
-            i = p * 4;
-            r = d[i];
-            g = d[i + 1];
-            b = d[i + 2];
-            if (!isFringe(r, g, b)) continue;
-            x = p % w;
-            y = (p - x) / w;
-            if (x === 0 || removed[p - 1] || x === w - 1 || removed[p + 1] || y === 0 || removed[p - w] || y === h - 1 || removed[p + w]) {
-              extra.push(p);
-            }
-          }
-          for (n = 0; n < extra.length; n++) removed[extra[n]] = 1;
-        }
-        for (p = 0; p < w * h; p++) {
-          if (removed[p]) d[p * 4 + 3] = 0;
-        }
-        ctx.putImageData(image, 0, 0);
-        img.src = canvas.toDataURL("image/png");
-        if (img.complete) reveal();
-      }
-
-      var stage = 0;
-      function onLoad() {
-        if (stage === 0) {
-          stage = 1;
-          try { knockOutWhite(); } catch (e) { reveal(); }
-        } else {
-          reveal();
-        }
-      }
-      img.addEventListener("error", reveal);
-      img.addEventListener("load", onLoad);
-      if (img.complete) onLoad();
-    })();
-  </script>
 </body>
 </html>
