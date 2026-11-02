@@ -1,0 +1,23 @@
+# Tamworth Informed
+
+> Tamworth’s digital community hub, coming soon.
+
+Tamworth Informed is a digital community hub for Tamworth, Staffordshire, England. It connects residents, local businesses, tradespeople and employers. The website is coming soon.
+
+The public community is the Facebook group: https://www.facebook.com/groups/560283727406222
+
+- Over 47,000 members
+- Over 2 million in reach
+- Business opportunities available
+
+## Contact
+
+Questions and involvement messages go through the form on the homepage. Name, email and message are required. Telephone is optional. Email office@tamworthinformed.com directly.
+
+## Canonical
+
+https://tamworth-informed.netlify.app/
+
+## Language
+
+en-GB

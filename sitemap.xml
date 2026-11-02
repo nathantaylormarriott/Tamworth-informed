@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://tamworth-informed.netlify.app/</loc>
+    <lastmod>2026-11-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://tamworth-informed.netlify.app/og-image.jpg</image:loc>
+      <image:title>Tamworth Informed</image:title>
+      <image:caption>Tamworth Informed logo over Tamworth Castle and the flower gardens</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://tamworth-informed.netlify.app/tamworth-informed-logo.webp</image:loc>
+      <image:title>Tamworth Informed</image:title>
+    </image:image>
+  </url>
+</urlset>
