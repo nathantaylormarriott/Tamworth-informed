@@ -635,9 +635,7 @@
       }
 
       .field-email,
-      .field-message,
-      .contact-form button,
-      .contact-mail {
+      .field-message {
         grid-column: 1 / -1;
       }
 
@@ -650,10 +648,15 @@
         width: auto;
         justify-self: start;
         padding-inline: 1.4rem;
+        margin-top: 0.35rem;
       }
 
       .contact-form button {
-        margin-top: 0.35rem;
+        grid-column: 1;
+      }
+
+      .contact-mail {
+        grid-column: 2;
       }
     }
   </style>
